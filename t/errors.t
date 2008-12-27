@@ -9,8 +9,8 @@ use Test::Exception ('no_plan') ;
 
 BEGIN { use_ok( 'WebService::TWFY::API' ); }
 
-my $api = new WebService::TWFY::API ;
-
+my $rh = { key => 'ABC123' };
+my $api = WebService::TWFY::API->new( $rh );
 
 dies_ok { my $rv = $api->query ( 'fake_function', {   'postcode' => 'W12',
                                             'output'   => 'xml' ,

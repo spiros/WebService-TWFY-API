@@ -22,7 +22,8 @@ Version 0.01
 
   use WebService::TWFY::API ;
   
-  my $api = new WebService::TWFY::API ;
+  my $rh = { key => 'ABC123' }; 
+  my $api = WebService::TWFY::API->new( $rh ) ;
 
   my $rv = $api->query ( 'getConstituency', { 'postcode' => 'W128JL'
                                               'output'   => 'xml',

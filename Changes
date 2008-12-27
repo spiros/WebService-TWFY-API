@@ -6,4 +6,6 @@ Revision history for Perl module WebService::TWFY::API
 0.02 Tue Apr 3 2007
     - Added Test::Exception to list of prereqs. Apologies CPANTS :-()
 
+0.03 Sat Dec 27th 2008
+    - the TWFY API now requires a key, thanks davorg!
 

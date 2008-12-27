@@ -9,7 +9,7 @@ use WebService::TWFY::Response ;
 use LWP::UserAgent ;
 
 our @ISA = qw( LWP::UserAgent ) ;
-our $VERSION = 0.02 ;
+our $VERSION = 0.03 ;
 
 =head1 NAME
 
@@ -25,7 +25,8 @@ Version 0.02
 
   use WebService::TWFY::API ;
   
-  my $api = new WebService::TWFY::API ;
+  my $rh = { key => 'ABC123' }; 
+  my $api = WebService::TWFY::API->new( $rh ) ;
 
   my $rv = $api->query ( 'getConstituency', { 'postcode' => 'W128JL'
                                               'output'   => 'xml',
@@ -55,8 +56,13 @@ the API. However, it helps them track and monitor usage of the API service from 
 
 The following constructor method creates C<WebService::TWFY::API> object and returns it.
 
-  my $api = new WebService::TWFY::API ;
-  
+  my $rh = { key => 'ABC123' };
+
+  my $api = WebService::TWFY::API->new( $rh ) ;
+
+The API now requires a key, you can obtain one at L<http://www.theyworkforyou.com/api/key>.
+The key above will not work, its only used as an example.
+
 In future versions, if needed, it will support specifying the version of the API you wish to use.
 
 =item C<execute_query>
@@ -143,6 +149,11 @@ C<WebService::TWFY::Request>, C<WebService::TWFY::Response>, L<http://www.theywo
 
 sub new {
     my $class = shift ;
+    my $rh    = shift;
+    
+    unless ( defined $rh->{key} ) {
+       die "The API requires a key. You can obtain one at http://www.theyworkforyou.com/api/key";
+    }
     
     # Please do not change the following user agent parameter.
     # It does not provide TheyWorkForYou.com with any personal information
@@ -154,6 +165,8 @@ sub new {
     
     bless $self, $class ;
     
+    $self->{'_api_key'} = $rh->{'key'};
+    
     return $self ;
 }
 
@@ -163,6 +176,8 @@ sub query {
   
   return unless ( (defined $function) and (defined $rh_args) ) ;
   return unless ref $rh_args eq 'HASH' ;
+  
+  $rh_args->{key} = $self->{_api_key};
   
   my $query = new WebService::TWFY::Request ( $function, $rh_args ) ;
   
