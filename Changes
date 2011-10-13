@@ -11,3 +11,6 @@ Revision history for Perl module WebService::TWFY::API
 
 0.04 Tue Aug 2nd 2011
     - house cleaning
+
+0.06 Thu Oct 13th 2011
+    - Added HTTP::Request as prereq  (thanks Andreas)

@@ -9,7 +9,7 @@ use WebService::TWFY::Response ;
 use LWP::UserAgent ;
 
 our @ISA = qw( LWP::UserAgent ) ;
-our $VERSION = 0.05 ;
+our $VERSION = 0.06 ;
 
 =head1 NAME
 
@@ -17,7 +17,7 @@ WebService::TWFY::API - API interface for TheyWorkForYou.com
 
 =head1 VERSION
 
-Version 0.05
+Version 0.06
 
 =cut
 

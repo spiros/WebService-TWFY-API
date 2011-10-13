@@ -9,7 +9,8 @@ WriteMakefile(
     AUTHOR       => 'Spiros Denaxas (s [dot] denaxas [@] gmail [dot]com)',
     ABSTRACT     => 'API interface for TheyWorkForYou.com',
     PREREQ_PM    => {
-                     'Test::Simple' => 0.44,
+                     'Test::Simple'    => 0.44,
                      'Test::Exception' => 0.24,
+                     'HTTP::Request'   => 0,
                     },
 );
