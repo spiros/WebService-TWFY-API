@@ -8,6 +8,7 @@ use Carp ;
 use HTTP::Request ;
 use URI ;
 
+our $VERSION = 0.07 ;
 our @ISA = qw( HTTP::Request ) ;
 
 =head1 NAME

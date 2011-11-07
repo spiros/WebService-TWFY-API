@@ -5,6 +5,7 @@ use warnings ;
 
 use HTTP::Response ;
 
+our $VERSION = 0.07 ;
 our @ISA = qw( HTTP::Response ) ;
 
 =head1 NAME
