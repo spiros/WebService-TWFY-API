@@ -12,5 +12,8 @@ WriteMakefile(
                      'Test::Simple'    => 0.44,
                      'Test::Exception' => 0.24,
                      'HTTP::Request'   => 0,
+                     'LWP::UserAgent'  => 0,
+                     'Carp'            => 0,
+                     'URI'             => 0,
                     },
 );

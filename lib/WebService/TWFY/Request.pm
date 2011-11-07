@@ -8,7 +8,6 @@ use Carp ;
 use HTTP::Request ;
 use URI ;
 
-our $VERSION = 0.05 ;
 our @ISA = qw( HTTP::Request ) ;
 
 =head1 NAME
@@ -17,7 +16,7 @@ WebService::TWFY::Request - API interface for TheyWorkForYou.com
 
 =head1 VERSION
 
-Version 0.05
+Version 0.07
 
 =cut
 
